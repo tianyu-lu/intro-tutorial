@@ -35,7 +35,7 @@ print(4+1+4)
 ### Arrays
 
 # Create a 1D column vector:
-x_col = [4,1,4] # or [4; 1; 4]
+x_col = [4 2; 1 3; 4 5] # or [4; 1; 4]
 @show size(x_col)
 
 # Create a row vector:
@@ -45,6 +45,7 @@ x_row = [4 1 4]
 # Transpose with the ' syntax
 x_t = x_row'
 @show size(x_t)
+
 # The difference between x_col (3) and x_t (3,1) is subtle!
 
 # A k-spaced vector of ponts from j to n
@@ -109,7 +110,7 @@ B_re |> collect
 # x |> f is a fancy syntax for f(x), you'll see it sometimes
 
 # Indexing into Arrays
-# Arrays are represented in memory as a single vector, which you can acess like
+# Arrays are represented in memory as a single vector, which you can access like
 A[:]
 # ith row use A[i,:]
 A[1,:]
@@ -151,7 +152,7 @@ sum.(eachcol(A))
 eachslice(A,dims=1) # for more than just 2D matrices
 
 # Assessing your code performance is easy in Julia
-# for instance, should we broadcast sum over eachrow or sum with dims keword?
+# for instance, should we broadcast sum over eachrow or sum with dims keyword?
 # We can use the BenchmarkTools.@btime macro to find out!
 # Let's start using Plots
 using BenchmarkTools
@@ -163,7 +164,7 @@ using BenchmarkTools
 # We can access the package manager by typing ] into the REPL
 # From here we can ] add PackageName to get the package.
 # However! let's do even better.
-# To share code, like the starter code, it is very helpful  to know
+# To share code, like the starter code, it is very helpful to know
 # exactly what packages and verisons everyone is using
 # (including old versions of your own code!)
 # Inside the project directory type
@@ -309,7 +310,7 @@ end
 # so gradient(f,1.) = (df/dx,)
 # this means that we'll get the gradient we get df/dx by indexing the first element [1]
 
-# This is useful for multivatiable functions
+# This is useful for multivariable functions
 g(x,y) = x*y
 
 gradient(g,3.,2.)
